@@ -10,7 +10,7 @@ export default function _layout() {
   const [error, setError] = useState(false);
 
   const FindMin = () => {
-    if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+    if (isNaN(num1 as unknown as number) || isNaN(num2 as unknown as number) || isNaN(num3 as unknown as number)) {
       setError(true);
     } else {
       setError(false);
@@ -59,7 +59,7 @@ export default function _layout() {
       <TouchableOpacity onPress={() => FindMin()} style={style.textLink}>
         <Text>Find Min</Text>
       </TouchableOpacity>
-      {min !== null ? <Text>Min is: {min}</Text> : <></>}
+      {min !== null ? <Text>Min is: {min as unknown as string}</Text> : <></>}
     </View>
   );
 }
